@@ -1,0 +1,38 @@
+// Header, footer
+
+header.page, footer.page {
+    @include bpset-length {
+        padding: 2vh 3.5vw;
+        margin: 0;
+    }
+    @include bpset-length(tablet) { 
+        padding: 0; 
+        margin: 0;
+    }
+    @include bp(laptop) {
+        width: 80vw;
+        padding: 4vh 5vw;
+        margin: 0;
+    }
+    @include bp(desktop) {
+        width: 80vw;
+        padding: 5vh 10vw;
+        margin: 0;
+    }
+}
+
+header.page {
+    position: sticky;
+    top: 0;
+}
+
+// Main
+
+main {
+    @include bpset-length;
+    @include bpset-length(tablet) {
+        padding-top: 1.5vh;
+    }
+    @include bpset-length(laptop);
+    @include bpset-length(desktop);
+}

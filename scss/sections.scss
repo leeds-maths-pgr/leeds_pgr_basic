@@ -1,0 +1,63 @@
+// Preamble
+
+section#preamble {
+    font-style: italic;
+    margin-bottom: 1em;
+    p {
+        margin: 0;
+        display: inline;
+    }
+}
+
+// Content
+
+section#content, article#content {
+    ul { list-style: circle; }
+    ol { list-style: decimal; }
+    ol, ul, dl {
+        p { margin-bottom: 0; }
+
+        dt { font-weight: 600; }
+
+        @mixin bpset-lists($point: mobile) {
+            @include bp($point) {
+                margin-bottom: map-get($fsizes, parskip) - 0.25rem;
+                li, dd {
+                    margin: 0;
+                    margin-left: 1rem;
+                    margin-bottom: 0.25rem;
+                }
+            }
+        }
+
+        @include bpset-lists;
+        @include bpset-lists(tablet);
+        @include bpset-lists(laptop);
+        @include bpset-lists(desktop);
+    }
+
+    em { font-style: italic; }
+
+    strong { font-weight: bold; }
+
+    blockquote {
+        display: block;
+        font-family: serif;
+        font-style: italic;
+
+        em {
+            font-style: normal;
+            font-family: sans-serif;
+        }
+
+        margin-left: 1rem;
+    }
+
+    sup {
+        vertical-align: super;
+        @include bp { font-size: map-get($fsizes, font) * 0.8; }
+        @include bp(tablet) { font-size: map-get($fsizes, font) * 0.8; }
+        @include bp(laptop) { font-size: map-get($fsizes, font) * 0.8; }
+        @include bp(desktop) { font-size: map-get($fsizes, font) * 0.8; }
+    }
+}

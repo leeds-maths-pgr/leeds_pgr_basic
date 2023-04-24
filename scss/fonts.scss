@@ -1,0 +1,50 @@
+body {
+    color: map-get($colors, fg);
+    background-color: map-get($colors, bg);
+    font-family: sans-serif;
+    @include bpset-fonts;
+    @include bpset-fonts(tablet);
+    @include bpset-fonts(laptop);
+    @include bpset-fonts(desktop);
+}
+
+// Headings
+
+@mixin bpset-head($i, $point: mobile) {
+    @include bp($point) {
+        font-size: map-get($hsizes, $i);
+        margin: map-get($hmargins, $i);
+        @content;
+    }
+}
+
+@for $i from 1 through 6 {
+    h#{$i} {
+        font-weight: 400;
+        line-height: 1.1;
+        a { color: inherit !important; }
+
+        @include bpset-head($i);
+        @include bpset-head($i, tablet);
+        @include bpset-head($i laptop);
+        @include bpset-head($i, desktop);
+    }
+}
+
+/* Links */
+a {
+    &:link {
+        color: map-get($colors, link);
+        text-decoration: none;
+    }
+
+    &:hover, &:focus { text-decoration: underline; }
+
+    &:visited { color: map-get($colors, link-visited); }
+
+    &:active { font-weight: 900; }
+}
+
+// Code
+
+code, pre { font-family: monospace; }

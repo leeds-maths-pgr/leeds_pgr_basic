@@ -1,5 +1,7 @@
 SCSS_ASSETS := $(addprefix scss/,$(addsuffix .scss, \
 	_base elements fonts header layout sections style))
+TEMPLATES := $(addprefix templates/,$(addsuffix .html, \
+	simple_page navbar_item))
 PANDOC_CMD := pandoc -s --template templates/simple_page.html --metadata-file=test/mdata.yaml
 
 css/style.css: $(SCSS_ASSETS)
@@ -7,7 +9,7 @@ css/style.css: $(SCSS_ASSETS)
 	rm -f css/style.css
 	sass scss/style.scss css/style.css
 
-test_html: css/style.css
+test_html: css/style.css $(TEMPLATES)
 	mkdir -p html/
 	cp -r css html/
 	cp -r scss html/

@@ -1,0 +1,4 @@
+site_name: Test Site
+navbar:
+- { link: /, display: Homepage }
+- { link: /oneshot, display: oneshot }

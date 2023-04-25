@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>$if(site_name)$ $site_name$ - $endif$$title$</title>
+</head>
+<body>
+  <header class="page">
+    <h1 class="title">
+$if(site_name)$$site_name$$if(display_title)$ - $endif$$endif$$if(display_title)$$display_title$$endif$
+    </h1>
+    <nav id="menu"
+         aria-label="navigation menu">
+      <ul role="menubar">
+        ${ navbar:navbar_item() }
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section id="content">
+      $body$
+    </section>
+  </main>
+</body>
+</html>

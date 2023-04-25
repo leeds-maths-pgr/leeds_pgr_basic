@@ -1,86 +1,8 @@
 // Article headers
 
-// // Latex diagrams
-
-// @media (prefers-color-scheme: dark) {
-//     .latexdiag {
-//         filter: invert(70%);
-//     }
-// }
-
 // Tooltips
 
 .tooltip {
     color: map-get($colors, fg);
     text-decoration: underline dotted .1rem!important;
-}
-
-// Code environments
-
-pre {
-    overflow-x: scroll;
-    margin: 1rem 0;
-    padding: 0.5rem 0.75rem;
-}
-
-// Math blocks
-
-.block-eq, math[display=block] {
-    overflow-x: scroll;
-    max-width: 100%;
-    @mixin bpset-eq($eq-height, $eq-skip, $point: mobile) {
-        @include bp {
-            font-size: map-get($fsizes, font)*$eq-height;
-            margin-top: $eq-skip;
-            margin-bottom: map-get($fsizes, parskip) + $eq-skip;
-            @content;
-        }
-    }
-    @include bpset-eq(1.5, 0.25rem);
-    @include bpset-eq(1.5, 0.25rem, tablet);
-    @include bpset-eq(1.7, 0.25rem, laptop);
-    @include bpset-eq(1.7, 0.25rem, desktop) {overflow-x: auto};
-}
-
-// Figures
-
-figure {
-    display: block;
-    text-align: center;
-    @include bp {
-        margin: 0 5%;
-    }
-    @include bp(tablet) {
-        margin: 0 15%;
-    }
-
-    > a {
-        margin: 0;
-        padding: 0;
-        line-height: 0;
-    }
-
-    svg, img {
-        margin: 0;
-        background-color: white;
-        padding: 0;
-        width: 100%!important;
-        height: auto!important;
-        @include bp {
-            font-size: 1rem;
-        }
-        @include bp(tablet) {
-        }
-    }
-
-    figcaption {
-        background-color: map-get($colors, bg-2);
-        text-align: center;
-        @include bp {
-            font-size: (map-get($fsizes, font) * 0.95);
-        }
-        @include bp(tablet) {
-            font-size: (map-get($fsizes, font) * 0.99);
-        }
-    }
 }

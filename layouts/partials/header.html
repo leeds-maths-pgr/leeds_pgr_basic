@@ -1,0 +1,16 @@
+<header class="page">
+    {{ $title := print .Site.Name " — " .Title }}
+    {{ if .IsHome }}{{ $title = .Site.Name }}{{ end }}
+    <h1 class="title">{{ $title }}</h1>
+    <div id="nav-border" class="container">
+        <nav id="nav" class="nav justify-content-center" aria-label="navigation menu">
+            {{ range .Site.Menus.main }}
+            <li role="none">
+                <a role="menuitem"
+                   aria-haspopup="false"
+                   href="{{ .URL }}">{{ $text := print .Name | safeHTML }}</a>
+            </li>
+            {{ end }}
+        </nav>
+    </div>
+</header>

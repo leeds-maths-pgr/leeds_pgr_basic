@@ -1,6 +1,6 @@
 <header class="page">
-    {{ $title := print .Site.Name " — " .Title }}
-    {{ if .IsHome }}{{ $title = .Site.Name }}{{ end }}
+    {{ $title := print .Site.Title " — " .Title }}
+    {{ if .IsHome }}{{ $title = .Site.Title }}{{ end }}
     <h1 class="title">{{ $title }}</h1>
     <div id="nav-border" class="container">
         <nav id="nav" class="nav justify-content-center" aria-label="navigation menu">

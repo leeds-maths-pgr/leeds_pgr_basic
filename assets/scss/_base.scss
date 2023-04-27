@@ -125,22 +125,6 @@ $fonts : (
     ),
 );
 
-// From https://dev.to/chicio/add-dark-mode-support-on-your-website-with-sass-and-prefers-color-scheme-media-query-2p1
-@mixin themed($property, $color, $isImportant: false) {
-    $light: map-get($themes, light);
-    $dark: map-get($themes, dark);
-
-    #{$property}: map-get($light, $color);
-    @media (prefers-color-scheme: dark){
-        @if $isImportant {
-            #{$property}: map-get($dark, $color)!important;
-        }
-        @else {
-            #{$property}: map-get($dark, $color);
-        }
-    }
-}
-
 $hsizes: null;
 $hmargins: null;
 $lengths: null;

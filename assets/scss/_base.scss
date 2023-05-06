@@ -81,7 +81,8 @@ $headmargins : (
     ),
 );
 
-$alllengths : (
+// Lengths for the content section of the document
+$content-lengths : (
     mobile: (
         m-width: 90vw,
         m-margin: 0 5vw,
@@ -146,7 +147,7 @@ $fsizes: null;
     }
     $hsizes: map-get($headsizes, $pname)!global;
     $hmargins: map-get($headmargins, $pname)!global;
-    $lengths: map-get($alllengths, $pname)!global;
+    $lengths: map-get($content-lengths, $pname)!global;
     $fsizes: map-get($fonts, $pname)!global;
     @if $point == mobileonly {
         @media (max-width: 799px) {

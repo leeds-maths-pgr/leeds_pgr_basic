@@ -3,6 +3,8 @@
 header.page, footer.page {
     @include bpset-length {
         padding: 2vh 3.5vw;
+    background-color: map-get($colors, bg-2);
+    z-index: 10;
         margin: 0;
     }
     @include bpset-length(tablet) { 
@@ -24,7 +26,6 @@ header.page, footer.page {
 header.page {
     position: sticky;
     top: 0;
-    z-index: 10;
 }
 
 // Main

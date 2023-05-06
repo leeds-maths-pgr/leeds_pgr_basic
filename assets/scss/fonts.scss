@@ -2,7 +2,6 @@
 
 body {
     color: map-get($colors, fg);
-    background-color: map-get($colors, bg);
     font-family: sans-serif;
     @include bpset-fonts;
     @include bpset-fonts(tablet);
@@ -23,7 +22,7 @@ body {
     }
 }
 
-/* Links */
+// Links
 a {
     &:link {
         color: map-get($colors, link);

@@ -1,3 +1,5 @@
+// General font and type settings
+
 body {
     color: map-get($colors, fg);
     background-color: map-get($colors, bg);
@@ -33,4 +35,10 @@ a {
     &:visited { color: map-get($colors, link-visited); }
 
     &:active { font-weight: 900; }
+}
+
+// Tooltips
+.tooltip {
+    color: map-get($colors, fg);
+    text-decoration: underline dotted .1rem!important;
 }

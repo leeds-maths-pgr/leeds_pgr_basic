@@ -8,16 +8,6 @@ body {
     @include bpset-fonts(desktop);
 }
 
-// Headings
-
-@mixin bpset-head($i, $point: mobile) {
-    @include bp($point) {
-        font-size: map-get($hsizes, $i);
-        margin: map-get($hmargins, $i);
-        @content;
-    }
-}
-
 @for $i from 1 through 6 {
     h#{$i} {
         font-weight: 400;

@@ -8,17 +8,6 @@
 
         dt { font-weight: 600; }
 
-        @mixin bpset-lists($point: mobile) {
-            @include bp($point) {
-                margin-bottom: map-get($fsizes, parskip) - 0.25rem;
-                li, dd {
-                    margin: 0;
-                    margin-left: 1rem;
-                    margin-bottom: 0.25rem;
-                }
-            }
-        }
-
         @include bpset-lists;
         @include bpset-lists(tablet);
         @include bpset-lists(laptop);

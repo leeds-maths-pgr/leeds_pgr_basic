@@ -132,6 +132,8 @@ $fsizes: null;
 
 // From https://responsivedesign.is/develop/getting-started-with-sass-and-breakpoint-mixin/
 // From https://css-tricks.com/conditional-media-query-mixins/
+
+// Generic breakpoint
 @mixin bp($point: mobile) {
     $pname: null;
     @if $point == mobileonly {
@@ -169,6 +171,7 @@ $fsizes: null;
     }
 }
 
+// Set lengths
 @mixin bpset-length($point: mobile) {
     @include bp($point) {
         width: map-get($lengths, m-width);
@@ -178,11 +181,33 @@ $fsizes: null;
     }
 }
 
+// Set fonts
 @mixin bpset-fonts($point: mobile) {
     @include bp($point) {
         font-size: map-get($fsizes, font);
         line-height: map-get($fsizes, line-height);
         p { margin-bottom: map-get($fsizes, parskip); }
         @content;
+    }
+}
+
+// Set head sizes
+@mixin bpset-head($i, $point: mobile) {
+    @include bp($point) {
+        font-size: map-get($hsizes, $i);
+        margin: map-get($hmargins, $i);
+        @content;
+    }
+}
+
+// Set lists
+@mixin bpset-lists($point: mobile) {
+    @include bp($point) {
+        margin-bottom: map-get($fsizes, parskip) - 0.25rem;
+        li, dd {
+            margin: 0;
+            margin-left: 1rem;
+            margin-bottom: 0.25rem;
+        }
     }
 }

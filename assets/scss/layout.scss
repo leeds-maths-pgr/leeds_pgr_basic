@@ -24,11 +24,14 @@ header.page, footer.page {
 header.page {
     position: sticky;
     top: 0;
+    z-index: 10;
 }
 
 // Main
 
 #content {
+    z-index: 0;
+
     @include bpset-length;
     @include bpset-length(tablet) {
         padding-top: 1.5vh;

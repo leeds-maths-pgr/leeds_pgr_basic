@@ -28,7 +28,7 @@ header.page {
 
 // Main
 
-main {
+#content {
     @include bpset-length;
     @include bpset-length(tablet) {
         padding-top: 1.5vh;

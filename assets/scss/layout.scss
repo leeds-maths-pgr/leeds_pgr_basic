@@ -40,3 +40,8 @@ header.page {
     @include bpset-length(laptop);
     @include bpset-length(desktop);
 }
+
+// Line spans
+span.line {
+  display: inline-block;
+}

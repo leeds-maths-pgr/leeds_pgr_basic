@@ -1,7 +1,12 @@
 <header class="page">
-    {{ $title := print .Site.Title " — " .Title }}
-    {{ if .IsHome }}{{ $title = .Site.Title }}{{ end }}
-    <h1 class="title">{{ $title }}</h1>
+    <h1 class="title">
+        {{ if .IsHome }}
+        <span class="line">{{ .Site.Title }}</span>
+        {{ else }}
+        <span class="line">{{ .Site.Title }} — </span>
+        <span class="line">{{ .Title }}</span>
+        {{ end }}
+    </h1>
     <div id="nav-border" class="container">
         <nav id="nav" class="nav justify-content-center" aria-label="navigation menu">
             {{ range .Site.Menus.main }}

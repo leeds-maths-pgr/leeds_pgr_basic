@@ -1,3 +1,16 @@
+// Page element specific font and type settings
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background-color: map-get($colors, bg);
+    display: flex;
+    flex-direction: column;
+}
+
+
 // Header, footer
 
 header.page, footer.page {
@@ -37,6 +50,11 @@ section.content {
     }
     @include bpset-length(laptop);
     @include bpset-length(desktop);
+    flex: 1 0 auto;
+}
+
+footer.page {
+    flex-shrink: 0;
 }
 
 // Line spans

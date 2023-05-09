@@ -1,6 +1,6 @@
 # PGR Basic
 
-This is a simple pandoc template and stylesheet initially written to be used for the School of Maths PGR conference.
+This is a simple [Hugo](https://gohugo.io/) theme initially written to be used for the School of Maths PGR conference.
 
 ## Requirements
 
@@ -26,17 +26,4 @@ If you add new templates or scss files, remember to add them to the respective v
 
 ## Usage Notes
 
-The pandoc template is derived from [pwp-theme](https://git.sr.ht/~quantum/pwp-theme) and uses a few variables to keep the site design consistent.
-See the `test/content` directory for an example of how to generate content for the website.
-
-The following variables should be set in a metadata file at the project root.
-
-- `site_name`: (optional, string) The name of the website.
-- `navbar`: A list of navbar elements. A navbar element is a dictionary with two keys:
-  - `link`: A URL to which the navbar element should link to.
-  - `display`: The string which the navbar element should show.
-
-The following variables should be set in the metadata header at the start of a file.
-
-- `title`: The document title.
-- `display_title`: The title to display.
+The pandoc template is derived from [pwp-theme](https://git.sr.ht/~quantum/pwp-theme).

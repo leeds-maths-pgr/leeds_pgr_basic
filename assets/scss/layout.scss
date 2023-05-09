@@ -14,15 +14,18 @@ body {
 // Header, footer
 
 header.page, footer.page {
-    @include bpset-length {
-        padding: 2vh 3.5vw;
     background-color: map-get($colors, bg-2);
     z-index: 10;
+
+    @include bp {
+        width: 97.5vw;
         margin: 0;
+        padding: 2vh 0 2vh 2.5vw;
     }
-    @include bpset-length(tablet) { 
-        padding: 0; 
+    @include bp(tablet) {
+        width: 100vw;
         margin: 0;
+        padding: 2vh 0 2vh 2.5vw;
     }
     @include bp(laptop) {
         width: 80vw;

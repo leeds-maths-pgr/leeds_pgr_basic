@@ -1,5 +1,45 @@
 // Font and type for page elements
 
+header.page, footer.page {
+    @include bp(mobileonly) {
+        h1 {
+            font-size: calc(1.5rem + 1vw);
+            margin: 0.1rem 0;
+        }
+    }
+    color: map-get($colors, fg-2);
+
+    a {
+        color: map-get($colors, link-2);
+        &:visited {
+            color: map-get($colors, link-visited-2);
+        }
+    }
+
+    @include bp {
+        li {
+            line-height: 1;
+            margin: 0.25rem 1rem;
+        }
+    }
+
+    @include bp(tablet) {
+        h1 { margin: 0.5rem 0; }
+
+        li {
+            display: inline;
+            margin: 0.25rem 0.25rem;
+        }
+    }
+    nav > li {
+        margin-top: 0.75rem;
+    }
+    @include bp(tablet) {
+
+    }
+}
+
+
 // Content
 
 section.content {

@@ -2,7 +2,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
     <meta name="generator" content="hugo" />
-    <link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}css/reset.css">
     {{ $sass := resources.Get "scss/style.scss" }}
     {{ $style := $sass | resources.ToCSS | resources.Fingerprint }}
     <link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}">
